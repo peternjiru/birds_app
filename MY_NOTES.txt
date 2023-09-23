@@ -1,0 +1,21 @@
+1.  I can access my render db via pgAdmin
+- Servers > Register Server
+- postgres external access url://admin:cv0a7j9MX3acPSms8vQDG3LUKhzUR6MK@dpg-ck7mm3o8elhc73bljpgg-a.oregon-postgres.render.com/birds_app_db
+- in the form enter: hostname: dpg-ck7mm3o8elhc73bljpgg-a.oregon-postgres.render.com > username: admin, passwword: cv0a7j9MX3acPSms8vQDG3LUKhzUR6MK
+
+2. If there is an error that prevents model creation or seeding, delete the following: (I GUESS IF I CREATE RENDER DB AND CONNECT TO IT VIA PG ADMIN BEFORE DOING flask db init, I 
+DO NOT GET THE ERROR)
+DELETE FROM alembic_version WHERE version_num = '8c5178f4bd65'; (versuin num will/might differ)
+
+
+3. In the seed.py, comment out db.init_app(app) to prevent error: RuntimeError: A 'SQLAlchemy' instance has already been registered on this Flask app
+
+4. go to git hub and create a new repo (do not create README.md since I will init the git repo locally and push it):
+
+echo "# birds_app" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:peternjiru/birds_app.git
+git push -u origin main
