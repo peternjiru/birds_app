@@ -14,8 +14,21 @@ DELETE FROM alembic_version WHERE version_num = '8c5178f4bd65'; (versuin num wil
 
 echo "# birds_app" >> README.md
 git init
-git add README.md
+git add .
 git commit -m "first commit"
 git branch -M main
 git remote add origin git@github.com:peternjiru/birds_app.git
 git push -u origin main
+
+5. Then create a render web service:
+- new > web service
+- build and repoly from Git repository
+- connect to the repo
+- enter only the name e.g. Birds app
+- will not run untill setting the environment variables
+ > environment > add eenvironment variable: 
+ PYTHON_VERSION is 3.8.13
+ *** remember to change postgres:// below to postgresql://
+ DATABASE_URI is postgresql://admin:cv0a7j9MX3acPSms8vQDG3LUKhzUR6MK@dpg-ck7mm3o8elhc73bljpgg-a.oregon-postgres.render.com/birds_app_db
+
+ 6. after above, render will autimatically deploy the site (when you add new features and push, render deployes automatically)
